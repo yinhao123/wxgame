@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name = "format-detection" content="telephone = no" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!---->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="email=no" name="format-detection" />
+    <!---->
+    <meta name="keywords" content="">
+    <meta name="description" content=" ">
+    <title>排行榜</title>
+    <link rel="stylesheet" href="__STATIC__/css/phb/reset.css"/>
+    <link rel="stylesheet" href="__STATIC__/css/phb/me.css"/>
+    <script src="__STATIC__/js/jquery-2.2.1.min.js"></script>
+    <script src="__STATIC__/js/fastclick.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            FastClick.attach(document.body);
+        });
+    </script>
+    <style>
+        body{
+
+
+        }
+        .redpacket_box{position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: none;z-index: 2;
+            animation: myScale linear 0.3s both;
+            -webkit-animation: myScale linear 0.3s both;
+        }
+
+        .redpacket{width: 18rem;height: 16rem;position: absolute;margin: auto; top: 0;bottom: 0;left: 0;right: 0;background: url(../image/open_hb.png) no-repeat center center;background-size: contain;font-family: "微软雅黑";color: #2f2d23;font-size: 0.1rem;font-weight: normal;}
+        .redpacket h1,.redpacket h2{width: 50%;margin-left: 25%;font-weight: normal;line-height: 1.5rem;}
+        .redpacket h1{margin-top: 6.5rem;}
+        .redpacket h2 em{color: #ea553d;font-weight: 1rem;font-weight: bold;}
+
+        .redpacket_close{width: 2rem;height: 2rem;position: absolute;right: 1.5rem;top: 1.5rem;background: url(../image/close_hb.png) no-repeat center center;background-size: contain;}
+        .layer_bg{width: 100%;height: 100%;background:rgba(0,0,0,0.8);position:fixed;left:0;top:0;cursor: pointer;}
+        /*引流*/
+        .top_tit{position: relative;}
+        /*引流-红.包雨*/
+        .share>.zu_row{border-bottom: 1px solid #f1f1f1;}
+        .ad_share{padding: 0;height: 4rem;}
+        .ad_share a{margin: auto;}
+        .ad_share img{width: 100%;height: auto;position: absolute;margin: auto;top: 0;bottom: 0;}
+        /*引流-新手福利*/
+        .layer{width: 18rem;position:fixed;left:50%;margin-left: -9rem;top:9rem;background:#fff;border-radius:3px;z-index: 1;padding:2rem;box-sizing: border-box;color:#333;font-size:1rem;}
+
+        .slideBox{z-index: 3;opacity:1;}
+        .slideBox{
+
+            position:fixed; overflow:hidden; margin:0 auto;  width:80%;/* 设置焦点图最大宽度 */ left:55%;top: 1rem;margin-left: -44%;font-size: 0.16rem;background: rgba(158, 158, 158, 0);;
+            color: #795548;}
+        /*
+        .slideBox1,.slideBox2{
+
+            height:100%;background:#fff;margin:0 auto;box-sizing: border-box;opacity:0;position:fixed;left:0;top:0.8rem;}*/
+        .slideBox .hd{ position:absolute; height:17px; bottom:0; z-index:1; left:50%;}
+        .slideBox1 .hd1{left:6rem;}
+        .slideBox .hd li{ display:inline-block; width:8px; height:8px; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; background:#d3d3d3; text-indent:-9999px; overflow:hidden; margin:0 6px; position:relative;right:50%; }
+        .slideBox1 .hd1 li{right:0;}
+        .slideBox .hd li.on{ background:#2F7927;  }
+        .slideBox .bd{ position:relative; z-index:0; }
+
+        .slideBox .bd li{ position:relative; }
+        .slideBox .bd li img{ background:url(../image/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+        .slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);}  /* 去掉链接触摸高亮 */
+        .slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(../image/focusBg.png) repeat-x; color:#fff;  text-align:left;  }
+
+        .kftan_top{background:#fc792a;color:#fff;padding:0.5rem 0;text-align: center;}
+
+    </style>
+</head>
+<body>
+<div class="rankPage">
+    <div style="
+    position: fixed;
+    top: 0.1rem;
+    right: 0.18rem;
+    display:none;
+    color: white;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border-radius: 4px;
+" class="youxishuoming">奖励公告</div>
+    <div class="topBox">
+        <p class="tit" style="display:none"><img src="__STATIC__/image/wanjiapaih.png" alt=""/></p>
+        <div class="tabs">
+
+            <p class="rank " i-type="0" style="display:none"><span>昨日佣金结果</span></p>
+            <p class="rank " i-type="1" style=""><span>今日工资破百</span></p>
+            <p class="rank  active" i-type="2" style="width:100%"><span>佣金总排行</span></p>
+
+        </div>
+    </div>
+    <!--<div class="downTime">-->
+    <!--    <span id="timeTxt">今日倒计时:</span>-->
+    <!--    <span id="time"><i class="hours"></i>:<i class="minutes"></i>:<i class="seconds"></i></span>-->
+    <!--</div>-->
+    <li style="
+    padding: 0 0.3rem;
+
+    /* background-color: #fff; */
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    height: 0.2rem;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+">
+        <p class="nums">
+
+
+
+            <span>ID</span>
+        </p>
+        <p style="
+
+    padding-left: 0.3rem;
+">金.额</p>
+        <p>
+
+            奖励
+
+        </p>
+    </li>
+    <div class="rankList">
+        <ul class="list"></ul>
+    </div>
+    <div class="rule" style="display:none">
+        <p class="txt"></p>
+
+    </div>
+    <div id="returnHall">
+        <a href="{:url('index/index')}" style="background-color:#fa3535">返回</a>
+    </div>
+</div>
+<script src="__STATIC__/js/layui.js"></script>
+<script src="__STATIC__/js/template-native.js"></script>
+<script src="__STATIC__/js/pop.js"></script>
+<script src="__STATIC__/js/easytimer.js"></script>
+<script type="text/html" id="jrRule">
+    <p class="txt">1.昨日榜单是统计最近一天佣金推广排名情况;</p>
+    <p class="txt">2.计算时间从昨日凌晨00:00到今日凌晨00:00共24小时;</p>
+    <p class="txt">3.上榜的代理请联系客服领取奖励;</p>
+</script>
+<script type="text/html" id="zrRule">
+    <p class="txt">1.只统计今天推广情况，实时刷新;</p>
+    <p class="txt">2.统计最终结果，明天在昨日榜单查看;</p>
+</script>
+<script type="text/html" id="qtRule">
+    <p class="txt">1.累计每周佣金排行榜;</p>
+    <p class="txt">2.所得奖金请每周一联系客服领取上周奖励;</p>
+</script>
+<script type="text/html" id="rankHtml">
+    <%for(var i = 0;i < data.data.length;i++){%>
+    <li>
+        <p class="nums">
+            <%if(i == 0){%>
+            <img src="__STATIC__/image/p1.png" alt=""/>
+            <%}else if(i == 1){%>
+            <img src="__STATIC__/image/p2.png" alt=""/>
+            <%}else if(i == 2){%>
+            <img src="__STATIC__/image/p3.png" alt=""/>
+            <%}else{%>
+            <i><%= i+1 %></i>
+            <%}%>
+            <span><%=data.data[i].name%></span>
+        </p>
+        <p><%=data.data[i].price%></p>
+        <p class="youxishuoming" onclick="javascript:slide()">
+            有工资
+        </p>
+    </li>
+    <%}%>
+</script>
+
+<script type="text/html" id="rankHtml2">
+    <%for(var i = 0;i < data.data.length;i++){%>
+    <li>
+        <p class="nums">
+            <%if(i == 0){%>
+            <img src="__STATIC__/image/p1.png" alt=""/>
+            <%}else if(i == 1){%>
+            <img src="__STATIC__/image/p2.png" alt=""/>
+            <%}else if(i == 2){%>
+            <img src="__STATIC__/image/p3.png" alt=""/>
+            <%}else{%>
+            <i><%= i+1 %></i>
+            <%}%>
+            <span><%=data.data[i].name%></span>
+        </p>
+        <p><%=data.data[i].price%></p>
+        <p class="youxishuoming" >
+            <%if(i == 0){%>
+            总代位置
+            <%}else if(i>=1 && i<=4){%>
+            首发位置
+
+            <%}else{%>
+            继续努力
+            <%}%>
+        </p>
+    </li>
+    <%}%>
+</script>
+
+<script>
+    var timer = '',jkUrl = '';
+    window.onload = function(){
+        $.rankThreeFun('zongpaihang');
+        /*点击切换今日财神 昨日财神 七日佣金*/
+        $(".rankPage .topBox .rank").click(function(){
+            var type = $(this).attr("i-type");
+            $(this).addClass("active").siblings().removeClass("active");
+            var ruleData = {},ruleHtml = '';
+            if(type == 0){
+                ruleHtml = template("jrRule",{data:ruleData});
+                jkUrl = 'yesterday'
+            }else if(type == 1){
+                ruleHtml = template("zrRule",{data:ruleData});
+                jkUrl = 'today'
+            }else if(type == 2){
+                ruleHtml = template("qtRule",{data:ruleData});
+                jkUrl = 'zongpaihang'
+            }
+            $(".rankPage .rule").html(ruleHtml);
+            $.rankThreeFun(jkUrl,this);
+            return false;
+        });
+    }
+    $.rankThreeFun = function(jkUrl,duixiang){
+        var type = $(duixiang).attr("i-type");
+        $.ajax({
+            url:'?action=ajax_weihao',
+            type:"post",
+            data:{
+                action: jkUrl
+            },
+            dataType:"json",
+            beforeSend:function(){
+                $.lxPop().loading();//加载
+            },
+            success:function(data){
+                $.lxPop().closeLoad();//关闭加载
+                if(data.ret == 0){
+                    var data = data.data;
+
+                    if(type == 0){
+                        var rankHtml = template("rankHtml",{data:data});
+                        $(".rankList .list").html(rankHtml);
+                    }else if(type == 1){
+                        var rankHtml = template("rankHtml",{data:data});
+                        $(".rankList .list").html(rankHtml);
+                    }else if(type == 2){
+                        var rankHtml = template("rankHtml2",{data:data});
+                        $(".rankList .list").html(rankHtml);
+                    }else{
+                        var rankHtml = template("rankHtml2",{data:data});
+                        $(".rankList .list").html(rankHtml);
+                    }
+
+
+
+
+                }else{
+                    $.lxPop().msg(data.error);
+                }
+            },
+            error:function(data){
+                $.lxPop().closeLoad();//关闭加载
+                $.lxPop().msg("网络异常，请求失败！");
+            }
+        });
+    }
+    $.fn.redDownTime = function(time){
+        if(timer != '' || time == -1){
+            timer.stop();
+        }
+        var $self = this;
+        timer = new Timer();
+        timer.start({countdown: true, startValues: {seconds: time}});
+        var days = timer.getTimeValues().days,
+            H = timer.getTimeValues().hours,
+            M = timer.getTimeValues().minutes,
+            S = timer.getTimeValues().seconds;
+        var daysHtml = '';
+        if(days > 0){
+            (days<10)?days='0'+days:days;
+            daysHtml = '<i class="days">'+days+'</i>:'
+        }else{
+            daysHtml = '';
+        }
+        (H<10)?H='0'+H:H;
+        (M<10)?M='0'+M:M;
+        (S<10)?S='0'+S:S;
+        $self.html(daysHtml+'<i class="hours">'+H+'</i>:<i class="minutes">'+M+'</i>:<i class="seconds">'+S+'</i>');
+        timer.addEventListener('secondsUpdated', function (e) {
+            var day = timer.getTimeValues().days,
+                HH = timer.getTimeValues().hours,
+                MM = timer.getTimeValues().minutes,
+                SS = timer.getTimeValues().seconds;
+            (HH<10)?HH='0'+HH:HH;
+            (MM<10)?MM='0'+MM:MM;
+            (SS<10)?SS='0'+SS:SS;
+            if(day > 0) {
+                (day < 10) ? day = '0' + day : day;
+                $self.find('.days').html(day);
+            }
+            $self.find('.hours').html(HH);
+            $self.find('.minutes').html(MM);
+            $self.find('.seconds').html(SS);
+        });
+        timer.addEventListener('targetAchieved', function (e) {
+            //倒计时结束
+            $.rankThreeFun(jkUrl);
+        });
+    };
+</script>
+
+<div class="layer_bg" ></div>
+<!-- 红包弹框 -->
+<!-- 弹框 -->
+<!-- 红包 -->
+
+
+<div class="redpacket_box">
+    <div class="redpacket">
+
+        <h2 style="margin-top:7rem;">+<em></em>红包</h2>
+    </div>
+    <div class="colorful colorful_1"><div></div></div>
+    <div class="colorful colorful_2"><div></div></div>
+    <div class="colorful colorful_3"><div></div></div>
+    <div class="redpacket_close"></div>
+</div>
+
+<!-- <div id="slideBox" class="slideBox">
+    <div class="kftan_top">快来加入我们哦</div>
+    <div class="bd">
+        <ul>
+                <li>
+                    <img src="/attachment/all/201807/13_6f0c921284656c692f85706f2c28c6f.jpg" />
+                </li>
+                <li>
+                    <img src="/Public/Home/images/super_augur/ewm2.jpg"/>
+                </li>
+        </ul>
+    </div>
+    <div class="hd" style="display:none;">
+        <ul></ul>
+    </div>
+</div> -->
+
+<div id="slideBox2" class="slideBox" style="display:none;">
+
+    <div class="bd">
+        <ul>
+
+            <li>
+                <img src="__STATIC__/image/paihangbg.png"/>
+            </li>
+        </ul>
+    </div>
+    <div class="hd" style="display:none;">
+        <ul></ul>
+    </div>
+</div>
+<script>
+    function slide(){
+
+        $('.layer_bg').show();
+        $('#slideBox2').css('opacity','1');
+        $('#slideBox2').css('top','0.5rem');
+    }
+    $(function(){
+
+
+        $('#slideBox2').css('top','0.5rem');
+
+        //加入qq群
+        $('.youxishuoming').click(function(event) {
+            $('.layer_bg').show();
+            $('#slideBox2').css('opacity','1');
+            $('#slideBox2').css('top','0.5rem');
+        });
+        $(".layer_bg,.layer,#layer_redpacket").fadeOut('400');
+        $('.layer_bg').click(function(event) {
+            //alert("dgfdg");
+            $('#slideBox').css('opacity','0');
+            $('#slideBox').css('top','-50rem');
+            $('#slideBox2').css('opacity','0');
+            $('#slideBox2').css('top','-50rem');
+            $(".layer_bg,.layer,#layer_redpacket").fadeOut('400');
+        });
+
+        $('.layer_bg').on('touchmove', function(event) {
+            event.preventDefault();
+        });
+
+        // 红包
+
+    })
+</script>
+</body>
+</html>

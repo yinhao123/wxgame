@@ -1,0 +1,145 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no"><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 适应移动端end -->
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/global.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/card.css">
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.1.min.js"></script>
+
+
+</head>
+<body>
+<div class="wrap">
+    <div class="top_tit">
+        <div class="kjui">
+            <span><img src="__STATIC__/image/dd.png" alt=""></span>
+            <em>0.00</em>
+        </div>
+        <img src="__STATIC__/image/wen.png" alt="" class="rio">
+    </div>
+    <div class="bai_box">
+
+        <div class="chenxi ">13 </div>
+
+        <div class="chenxi on">25 </div>
+
+        <div class="chenxi ">50 </div>
+
+        <div class="chenxi ">100 </div>
+
+        <div class="chenxi ">500 </div>
+
+        <div class="chenxi ">1000 </div>
+
+
+
+    </div>
+    <div class="zu_da">
+
+
+
+        <!--
+        <div class="xzu">
+            <div class="left_poi left_poi3">
+                <img src="/Public/Home/images/super_augur/a3.png" alt="" />
+            </div>
+            <div  id="jd" class="right_poi">
+            </div>
+        </div>
+        -->
+
+        <div class="zu_da">
+            <!--
+                <div class="xzu">
+                    <div class="left_poi">
+                        <img src="/Public/Home/images/super_augur/a4.png" alt="" />
+                    </div>
+                    <div  id="alipay" class="right_poi">
+                    </div>
+                </div>
+            -->
+            <div class="xzu">
+                <div class="left_poi left_poi2">
+                    <img src="__STATIC__/image/a11.png" alt="">
+                </div>
+                <div id="wxgzh" class="right_poi on">
+                </div>
+            </div>
+            <!--
+            <div class="xzu">
+                <div class="left_poi left_poi3">
+                    <img src="/Public/Home/images/super_augur/a6.png" alt="" />
+                </div>
+                <div  id="saoma" class="right_poi">
+                </div>
+            </div>
+            -->
+        </div>
+        <div class="que_btn">
+            <img src="__STATIC__/image/rr.png" alt="" class="poiu">
+            <img src="__STATIC__/image/aa.png" alt="">
+            <em>24</em>
+        </div>
+    </div>
+    <div class="sdg" style="display: none;">
+        <img src="/attachment/all/201902/28_8d4a2f97051db60e5e6df9d70534927.jpg" alt="">
+    </div>
+
+
+    <script type="text/javascript">
+        $(function(){
+
+            $('.bai_box>div').on('click',function(){
+                $(this).addClass('on').siblings().removeClass('on');
+                var my_index=$(this).text();
+                $('.que_btn em').text(my_index)
+            })
+            $('.right_poi').on('click',function(){
+
+                $('.right_poi').removeClass('on');
+                $(this).addClass('on');
+
+            })
+            $('.rio').on('click',function(){
+                $('.sdg').show();
+            })
+            $('.sdg').on('click',function(){
+                $(this).hide();
+            })
+            $('.que_btn').on('click',function(){
+                var yanum=$('.bai_box .on').text();
+                //var type=$('.xzu .on').attr('id');
+                // var url = "/Index/rechargeIn.html?amount="+amount+'&type='+type;
+                // location.href=url;
+                location.href="/chenxizhifu.php?jine="+yanum+"&y=pay&paytype=2";
+            })
+
+
+        })
+    </script></div></body></html>

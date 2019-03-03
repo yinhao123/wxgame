@@ -1,0 +1,36 @@
+html,body{width: 100%;height: 100%;background: #f1f1f1;}
+.wrap{width: 100%;height: 100%;}
+.zu_row{background: rgba(255, 255, 255, 0.83);color:#1d0d01;font-size:0.8rem;padding:1rem 0.8rem;box-sizing: border-box;border-bottom: 1px solid #ebebeb;overflow: hidden;margin:0 auto 0.5rem;border-radius:3px;}
+.zu_row img{width: 2rem;height: 2rem;border-radius:2rem;float: left;}
+.two_low{float: left;color:#999;margin-top: 0.5rem;}
+.two_low p strong{font-size: 0.5rem;}
+.time_box{color:#512d53;font-size:0.75rem;}
+.right_box{float: right;}
+.right_box span{font-size:1.2rem;}
+.right_box .jiajia{color:#ec3702;}
+.right_box .jianjian{color:#ebebeb;}
+.back_box{width: 100%;height:3rem;background:#76426a;color:#fff;line-height: 3rem;text-align: center;position:fixed;left:0;bottom:0;font-size:1rem;border:2px solid #c7c7c9;box-sizing: border-box;box-shadow: 0 0 10px #C1C0C0;}
+.back_box a{color:#fff;width: 100%;height: 100%;display: block;letter-spacing:4px;}
+.top_box{width: 100%;background: #e18d2d;padding:0.8rem 0;box-sizing: border-box;height: 3.5rem;}
+.two_lia{overflow: hidden;width: 80%;height: 2rem;line-height: 2rem;border:1px solid #ee3600;border-radius:5px;overflow: hidden;margin-left: 10%;}
+.two_lia span{width: 33.33%;height: 100%;line-height: 2rem;color:#ee3600;float: left;text-align: center;font-size:0.9rem;cursor: pointer;box-sizing: border-box;}
+.two_lia span a{width: 100%;height: 100%;display: inline-block;color:#ee3600;}
+.span2{border-right: 1px solid #ee3600;border-left: 1px solid #ee3600;}
+.two_lia .col{background: #ee3600;color:#fff;}
+.game_box{margin-bottom: 3rem;}
+.game_box2,.game_box3{display: none;}
+
+.top_tit{
+	/* background-color:rgba(185, 101, 222, 0.58); */
+	width: 100%;height: 4rem;border-bottom: 1px solid #d4d4d4;line-height: 4rem;overflow: hidden;margin-bottom: 0.8rem;}
+.top_tit>div{width: 50%;text-align: center;color:#e5a53a;font-size:1rem;height: 4rem;box-sizing: border-box;float: left;}
+.top_tit .cxd{color:#fff3cf;border-bottom: 2px solid #fff3cf;}
+.jia_box{overflow: hidden;color:#333;font-size:1rem;}
+.jia_box span{float: left;}
+.jia_box .zhongj{font-size:0.8rem;color:#999;background:url(../../images/crazyFruit/hty.png) no-repeat left center;background-size:contain;padding-left: 1.3rem;padding-top: 0.3rem;margin-left: 0.3rem;width: 3rem;height: 1rem;}
+.jia_box .huang{background:url(../../images/crazyFruit/htyl.png) no-repeat left center;background-size:contain;}
+.jia_box .hongse{color:#ec3702;float: right;}
+/*.hongse .sgb{font-size:0.85rem;}*/
+.two_low2{color:#333;font-size:1rem;}
+.right_box2{line-height: 3rem;color:#ec3702;}
+.right_box3{line-height: 3rem;color:#07af2a;}

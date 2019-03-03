@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>微信款操作流程</title>
+    <meta name="keywords" content="微信付款操作流程"/>
+    <meta name="description" content="微信付款操作流程"/>
+
+    <script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>
+
+    <style type="text/css">
+        .contens{
+            background-color: #FFF;
+            width:86%;
+            max-width: 640px;
+            box-shadow: 0px 3px 10px #0070A6;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 5px;
+            height: auto;
+            border-radius: 6px;
+            font-family: "微软雅黑";
+            margin-bottom: 50px;
+            padding-top: 5px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+        p{font-size: 13px; margin-top: 6px;	margin-bottom: 6px;}
+        .inputsty{ font-size: 16px; width: 230px; height: 28px; }
+        .sweep{  background-repeat: no-repeat; text-align: center;
+        }
+
+        .buttonStyle{ margin-top: 10px; margin-bottom: 10px; }
+
+        .buttonStyle a{
+            width: 70%;
+            margin-right: auto;
+            margin-left: auto;
+            text-decoration: none;
+            font-size: 18px;
+            background-color: #0080C0;
+            border-radius: 6px;
+            color: #FFF;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            display: block;
+        }
+
+        .inputEmail { width: 30px; padding-left: 36px; padding-top: 160px; }
+        .tableRight { text-align: right; width:40%;}
+        .tableFeft { text-align: left; width:60%;}
+        .alertInfoStyle{ padding: 10px; border: 1px solid #f6c8b5; background-color: #edffcc; border-radius: 6px; font-size: 16px; display: none;}
+        .moneyNotice{color: #F00;font-size: 16px;}
+
+
+        @font-face {
+            font-family:rei;
+            src:url(https://i.alipayobjects.com/common/fonts/rei.eot?20130819);
+            src:url(https://i.alipayobjects.com/common/fonts/rei.eot?20130819#iefix) format("embedded-opentype"),url(https://i.alipayobjects.com/common/fonts/rei.woff?20130819) format("woff"),url(https://i.alipayobjects.com/common/fonts/rei.ttf?20130819) format("truetype"),url(https://i.alipayobjects.com/common/fonts/rei.svg?20130819#rei) format("svg")
+        }
+        .iconfont { font-family: rei; font-style: normal; font-weight: 400; cursor: default; -webkit-font-smoothing: antialiased; color: #FF0000; font-size: 20px; }
+    </style>
+
+
+</head>
+<body>
+<div class="contens">
+    <div class="sweep">
+
+        <p class="alertInfoStyle" id="alertInfoSuccess">
+            <i class="iconfont" style="color:#3C3;" title="支付成功">&#xF049;</i>&nbsp;恭喜您支付成功，<b style="color: #F60;">2</b>秒后返回网站。
+        </p>
+
+        <p class="alertInfoStyle" style="background-color: #fceee8;" id="alertInfoTimeout">
+            <i class="iconfont" style="color:#f33;" title="交易超时">&#xF045;</i>&nbsp;<a>该订单已过期如果您正在付款请停止操作。</a>
+        </p>
+
+
+
+        <p>
+            <b>第一步：长按二维码不放再点击识别图中二维码</b>
+        </p>
+
+
+
+        <p><b style="color: #0B48FF;">指定金额：<a class="moneyNotice">25.01</a></b></p><p><img id="Qrcode" src="__STATIC__/image/weixinpay.png" width="70%" /></p>
+
+
+
+
+        <script type="text/javascript">
+            var intDiff = parseInt(240);//倒计时总秒数量
+            function timer(intDiff){
+                window.setInterval(function(){
+                    var day=0,
+                        hour=0,
+                        minute=0,
+                        second=0;//时间默认值
+                    if(intDiff > 0){
+                        day = Math.floor(intDiff / (60 * 60 * 24));
+                        hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+                        minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+                        second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+                    }
+                    if (minute <= 9) minute = '0' + minute;
+                    if (second <= 9) second = '0' + second;
+                    $('#day_show').html(day+"天");
+                    $('#hour_show').html('<s id="h"></s>'+hour+'时');
+                    $('#minute_show').html('<s></s>'+minute+'分');
+                    $('#second_show').html('<s></s>'+second+'秒');
+                    intDiff--;
+                }, 1000);
+            }
+            $(function(){
+                timer(intDiff);
+            });
+        </script>
+        <style type="text/css">
+            h1 {
+                font-family:"微软雅黑";
+                font-size:30px;
+                border-bottom:solid 1px #ccc;
+                padding-bottom:10px;
+                letter-spacing:2px;
+            }
+            h2 {
+                font-family:"微软雅黑";
+                font-size:20px;
+                letter-spacing:1px;
+            }
+            .time-item strong {
+                background:#00AEEF;
+                color:#fff;
+                line-height:30px;
+                font-size:18px;
+                font-family:Arial;
+                padding:0 10px;
+                margin-left:5px;
+                margin-right:5px;
+                border-radius:5px;
+                margin-top:10px;
+                margin-bottom:10px;
+                box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+            }
+            #day_show {
+                float:left;
+                line-height:49px;
+                color:#c71c60;
+                font-size:32px;
+                margin:0 10px;
+                font-family:Arial,Helvetica,sans-serif;
+            }
+            .item-title .unit {
+                background:none;
+                line-height:49px;
+                font-size:24px;
+                padding:0 10px;
+                float:left;
+            }
+        </style>
+
+
+        <h2 style="font-size:14px;margin-top:10px;margin-bottom:1px">距离该订单过期还有</h2>
+        <div class="time-item">
+            <!--<span id="day_show">0天</span>
+            <strong id="hour_show">0时</strong>-->
+            <strong id="minute_show">0分</strong>
+            <strong id="second_show">0秒</strong>
+        </div>
+
+        <div class="buttonStyle">
+            <a href="/">返回网站</a>
+        </div>
+
+        <p style="color:#F2230B;margin-top: 5px;">温馨提示：付款成功后1-20秒到账请耐心等候，如果超时未到账请联系网站客服处理。</a></p>
+
+
+
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+
+    var timerQuerystatus =window.setInterval("querystatus('20190303223039466639')",3000);
+
+
+    //查询订单状态
+    function querystatus(order){
+        $.get("/shoukuanla1/index.php?c=Querystatus", { order: order,timestamp:new Date().getTime() },
+            function(data){
+
+                data=JSON.parse($.trim(data));
+                if(data.off == '2'){
+                    $("#Qrcode").attr("src","/shoukuanla1/images/failure.png");
+                    $("#alertInfoSuccess").show(100);
+                    upTimeout();
+                    window.clearInterval(timerQuerystatus);//停止ajax
+
+                }else if(data.isEmpty == '1'){
+                    //订单不存在提示失效
+                    var alertInfoTimeout=$("#alertInfoTimeout");
+                    alertInfoTimeout.find('a').text("该订单已失效如果您正在付款请停止操作");
+                    alertInfoTimeout.show(100);
+                    $("#Qrcode").attr("src","/shoukuanla1/images/failure.png");
+                    window.clearInterval(timerQuerystatus);//停止ajax
+                }else if(data.isTimeout == '1'){
+                    alertOverdue();
+                }
+            });
+
+    }
+
+    //跳转
+    function jump(){
+
+        window.location.href='/';
+    }
+
+    //订单过期处理
+    function alertOverdue(){
+
+        $("#Qrcode").attr("src","/shoukuanla1/images/failure.png");
+        var alertInfoTimeout=$("#alertInfoTimeout");
+        alertInfoTimeout.find('a').text("该订单已过期如果您正在付款请停止操作");
+        alertInfoTimeout.show(100);
+
+        window.clearInterval(timerQuerystatus);//停止ajax
+
+    }
+
+
+    //更新倒计时时间
+    function upTimeout(){
+
+        var timeoutspan=$('#alertInfoSuccess b').text();
+        if(timeoutspan == "0"){
+            jump();
+        }else{
+            timeoutspan--;
+            $('#alertInfoSuccess b').text(timeoutspan);
+            window.setTimeout("upTimeout()",1000);
+
+        }
+    }
+
+
+    window.setTimeout("alertOverdue()",1000*240);
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,a,
+dl, dt, dd, ol, ul, li,
+input, select,textarea,button,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{font-size: 625%;/*谷歌最小字体12px 62.5%是10px 所以设置625%为100px*/}
+body {
+    line-height:1;
+    color: #282828;
+    font-family: "微软雅黑","Microsoft YaHei";
+    font-size: 0.16rem;
+}
+
+:focus {
+    outline: 0;
+}
+
+ul ,ol{
+    list-style: none;
+}
+a {
+    text-decoration:none;
+    color: #282828;
+    -webkit-tap-highlight-color:transparent;/*去掉a标签点击时蓝色底色*/
+}
+a:active{
+    color: #282828;
+}
+a:visited{
+    color: #282828;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+input, select {
+    vertical-align:middle;
+    outline:none;
+}
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
+i,em{font-style: normal;}
+img{vertical-align: top;width: 100%;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #9e9e9e;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #9e9e9e;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #9e9e9e;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #9e9e9e;
+}

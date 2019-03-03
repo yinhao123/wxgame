@@ -1,0 +1,157 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>提现</title>
+
+    <link href="__STATIC__/css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="__STATIC__/css/init.css" type="text/css" rel="stylesheet">
+    <script src="__STATIC__/js/jquery-1.7.2.min.js"></script>
+    <style>
+        .layer{width: 16rem;position:fixed;left:50%;margin-left: -8rem;top:6rem;background:#fff;border-radius:3px;z-index: 2;padding:2rem;box-sizing: border-box;color:#333;font-size:1rem;text-align: center;}
+        .layer_bg{width: 100%;height: 100%;background:rgba(0,0,0,0.8);position:fixed;left:0;top:0;cursor: pointer;z-index: 1;}
+    </style>
+</head>
+<body>
+
+<div class="withdraw">
+    <div class="header">
+        <ul>
+            <a href="javascript:void(0);"><li class="left active" id="co1">余额提现</li></a>
+            <a href="javascript:void(0);"><li class="right" id="co2">佣金提现</li></a>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="info">
+        <div>
+            <label>到账账户</label>
+            <span class="account-tips">本微信号零钱包</span>
+        </div>
+        <div>
+            <label>提现金额</label>
+            <input id="money" type="tel" placeholder="请输入金额">
+        </div>
+        <div>
+            <label id="biaoshi">余额</label>
+            <span class="balances" id="tixianleixing">￥ 0.00</span>
+            <br>
+
+        </div>
+    </div>
+    <p id="error-tips"></p>
+    <div class="content">
+        <a href="javascript:void(0)" id="tijiao"><p class="btn-withdraw">确认提现</p></a>
+
+        <div class="tips">
+            <p class="highlight">微信必须实名制，否则无法提现成功</p>
+            <p class="highlight">禁止信用卡套现</p>
+
+            <p>每次提现必须是1元的整数倍</p>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="1" id='type' >
+
+<div class="layer" style="display: none"></div>
+<div class="layer_bg" style="display: none"></div>
+
+<a href="?action=userindex&v=1551514925" class="new-href">
+    <div class="footer" style="background:#efd007">
+        返回主页
+    </div>
+</a>
+
+
+<script type="text/javascript">
+    var cashType = '';
+    $(function(){
+        var jine  = "0.00";
+        var yongjin  = "0.00";
+        $('#co1').click(function(event) {
+            $(this).addClass('active');
+            $('#co2').removeClass('active');
+            $("#biaoshi").html("余*额");
+            $("#tixianleixing").html("￥"+jine);
+            $('#type').val(1);
+        });
+        $('#co2').click(function(event) {
+
+            $(this).addClass('active');
+            $('#co1').removeClass('active');
+            $("#biaoshi").html("佣*金");
+            $("#tixianleixing").html(yongjin);
+            $('#type').val(2);
+        });
+
+        // 获取兑.换积.分
+        var cantixian = false;
+        $("#tijiao").on('click', function(event) {
+
+            if(cantixian){
+                return false;
+            }
+
+            var money = $('#money').val();
+            var cashType = $('#type').val();
+
+            //alert(money);return false;
+            if(cashType != 1 && cashType != 2) return;
+
+            if(cashType == 1){
+
+                var action = "ceshiduihuan";
+                var zuidi = "4";
+
+            }else{
+                var action = "ceshiduihuany";
+                var zuidi = "4";
+            }
+
+            if (money == ''){//|| verify == '' || phone == ''
+                alert('请输入金额！');
+                return false;
+            }else if (parseFloat(money) < 0 || (parseFloat(money) <parseFloat(zuidi))) {
+                var msg = "最低"+zuidi+"元起提现";
+                alert(msg);
+                $('#money').val('');
+                return false;
+            }
+
+
+
+            cantixian = true;
+            $.ajax({
+                url:"?action=ajax_weihao",
+                type:'post',
+                dataType:'json',
+                data:{
+
+                    action:action,
+                    money:money
+
+
+                },
+                success:function(res) {
+
+                    alert(res['msg']);
+
+
+
+                    window.location.reload(true);
+
+
+                }
+            });
+
+        });
+
+
+
+
+    })
+</script>
+
+</body></html>

@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 适应移动端end -->
+    <title>莲云娱乐3，长久稳定平台，充值提现秒到-个人中心</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/personal.css" />
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/index.js"></script>
+    <style>
+
+        .redpacket_box{position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: none;z-index: 2;
+            animation: myScale linear 0.3s both;
+            -webkit-animation: myScale linear 0.3s both;
+        }
+
+        .redpacket{width: 18rem;height: 16rem;position: absolute;margin: auto; top: 0;bottom: 0;left: 0;right: 0;background: url(.__STATIC__/image/open_hb.png) no-repeat center center;background-size: contain;font-family: "微软雅黑";color: #2f2d23;font-size: 0.9rem;font-weight: normal;}
+        .redpacket h1,.redpacket h2{width: 50%;margin-left: 25%;font-weight: normal;line-height: 1.5rem;}
+        .redpacket h1{margin-top: 6.5rem;}
+        .redpacket h2 em{color: #ea553d;font-weight: 1rem;font-weight: bold;}
+
+        .redpacket_close{width: 2rem;height: 2rem;position: absolute;right: 1.5rem;top: 1.5rem;background: url(.__STATIC__/image/close_hb.png) no-repeat center center;background-size: contain;}
+    </style>
+</head>
+<style>
+    /*引流*/
+    .top_tit{position: relative;}
+    /*引流-红.包雨*/
+    .share>.zu_row{border-bottom: 1px solid #f1f1f1;}
+    .ad_share{padding: 0;height: 4rem;}
+    .ad_share a{margin: auto;}
+    .ad_share img{width: 100%;height: auto;position: absolute;margin: auto;top: 0;bottom: 0;}
+    /*引流-新手福利*/
+    #freshgift{width: 4rem;height: 4rem;background: url(__STATIC__/image/freshgift.gif) no-repeat center center;background-size: contain;position: absolute;top: 0.5rem;right: 0rem;}
+</style>
+<body>
+<div class="wrap">
+    <div class="top_tit">
+        <a href="javascript:void(0);" id="freshgift" onclick="dailyAward()"></a>
+        <!-- <div class="new_tu"></div> -->
+        <p class="idid">微光(ID:2541)</p>
+        <div class="cz_box">
+            <div class="right_box">
+
+                <div class="tx_box"><a href="{:url('index/tixian')}">兑.换</a></div>
+                <div class="tx_box tx_boxx"><a href="{:url('index/chongzhi')}" >充.值</a></div>
+            </div>
+        </div>
+        <div class="two_poi">
+
+            <div class="moip">
+                <p>游戏余额</p>
+                <p id="yue">0.00</p>
+            </div>
+
+            <div>
+                <p>推.广积.分</p>
+                <p>0.00</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="two_box share" >
+        <div class="zu_row ad_share">
+            <a href="#" onclick="dailyAward()"><img src="__STATIC__/image/ad.gif" alt=""></a>
+        </div>
+        <!--  <div class="zu_row" onclick="dailyAward()">
+            <div class="zu_left">
+                <img src="__STATIC__/image/wan.png"  alt="" />
+            </div>
+            <div class="zu_cen">
+                <span class="mshi">每20次夺.宝</span>
+                <span class="juju">（ 已玩0局）</span>
+            </div>
+            <div class="zu_right"> +2.00</div>
+        </div>
+        -->
+        <div class="zu_row">
+            <a href="{:url('index/weihaodingdan')}"></a>
+            <div class="zu_left">
+                <img src="__STATIC__/image/sg.png"  alt="" />
+            </div>
+            <div class="zu_cen">
+                <p>莲云娱乐3 </p>
+            </div>
+            <div class="zu_right">百分百惊喜</div>
+        </div>
+    </div>
+    <!-- 广告栏 -->
+    <div class="fix_gg" style="display:none;"><a href="http://fh.xindelong.cc"></a></div>
+    <div class="two_box">
+        <div class="zu_row">
+            <div class="left_box">
+                <a href="{:url('index/fenxiang')}"></a>
+                <div class="zu_left">
+                    <img src="__STATIC__/image/pmdj.png"  alt="" />
+                </div>
+                <div class="zu_cen">
+                    <p>我的二维码</p>
+                </div>
+            </div>
+            <div class="right_boxx">
+                <a href="{:url('index/orderlog')}"></a>
+                <div class="zu_left">
+                    <img src="__STATIC__/image/jymx.png" alt="" />
+                </div>
+                <div class="zu_cen">
+                    <p>交.易明细</p>
+                </div>
+            </div>
+        </div>
+        <div class="zu_row">
+            <div class="left_box">
+                <a href="{:url('index/mychid')}"></a>
+                <div class="zu_left">
+                    <img src="__STATIC__/image/shiju.png"  alt="" />
+                </div>
+                <div class="zu_cen">
+                    <p>我的家族</p>
+                </div>
+            </div>
+            <div class="right_boxx">
+                <a href="{:url('index/tuiguangguanli')}"></a>
+                <div class="zu_left">
+                    <img src="__STATIC__/image/paim.png"  alt="" />
+                </div>
+                <div class="zu_cen">
+                    <p>邀请奖励</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="zu_row">
+
+            <div class="left_boxx" id="addqq">
+
+                <div class="zu_left">
+                    <img src="__STATIC__/image/kf.png" alt="" />
+                </div>
+                <div class="zu_cen">
+                    <p>联系客服</p>
+                </div>
+
+            </div>
+
+            <div class="right_boxx">
+                <a href="{:url('index/paihangbang')}"></a>
+                <div class="zu_left">
+                    <img src="__STATIC__/image/paim.png" alt="" />
+                </div>
+                <div class="zu_cen">
+                    <p>佣.金排行榜</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="two_box" >
+        <div class="zu_row lop" style="display:none">
+            <div class="zu_left">
+                <img src="__STATIC__/image/kf.png"  alt="" />
+            </div>
+            <div class="zu_cen">
+                <p>加入我们</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 客服 -->
+<div id="slideBox" class="slideBox">
+    <div class="kftan_top">快来加入我们哦</div>
+    <div class="bd">
+        <ul>
+            <li>
+                <img src="/attachment/all/201807/13_6f0c921284656c692f85706f2c28c6f.jpg" />
+            </li>
+            <!--                     <li>
+                                    <img src="__STATIC__/image/ewm2.jpg"/>
+                                </li> -->
+        </ul>
+    </div>
+    <div class="hd" style="display:none;">
+        <ul></ul>
+    </div>
+</div>
+
+<div id="slideBox2" class="slideBox">
+    <div class="kftan_top">有疑问？可以联系我们</div>
+    <div class="bd">
+        <ul>
+            <li>
+                <img src="__STATIC__/image/28_8d4a2f97051db60e5e6df9d70534927.jpg" />
+            </li>
+            <!--                     <li>
+                                    <img src="__STATIC__/image/ewm2.jpg"/>
+                                </li> -->
+        </ul>
+    </div>
+    <div class="hd" style="display:none;">
+        <ul></ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    TouchSlide({
+        slideCell:"#slideBox",
+        titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell:".bd ul",
+        effect:"leftLoop",
+        autoPage:true,//自动分页
+        autoPlay:false //自动播放
+    });
+</script>
+<!-- 公用弹框 -->
+<div class="layer" style="display: none">
+    <p></p>
+</div>
+<div class="layer_bg"></div>
+<!-- 红包弹框 -->
+<!-- 弹框 -->
+<!-- 红包 -->
+<div class="redpacket_box">
+    <div class="redpacket">
+        <h1>恭喜您</h1>
+        <h2>今日获得<em></em>红包</h2>
+    </div>
+    <div class="colorful colorful_1"><div></div></div>
+    <div class="colorful colorful_2"><div></div></div>
+    <div class="colorful colorful_3"><div></div></div>
+    <div class="redpacket_close"></div>
+</div>
+
+<div id="layer_redpacket">
+    <div id="redpacket_cont">26.75</div>
+    <a href="{:url('index/index')}" id="redpacket_togame"></a>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    //红包动画
+    $(".redpacket_box,.layer_bg,.layer").on('touchmove', function(event) {
+        event.preventDefault();
+    });
+
+
+    $(".redpacket_box")[0].addEventListener("animationend", function(){
+        $(".redpacket_close").css('display', 'block');
+    }, false);
+    $(".redpacket_box")[0].addEventListener("webkitAnimationEnd", function(){
+        $(".redpacket_close").css('display', 'block');
+    }, false);
+
+    $(".redpacket_close").on('click', function(event) {
+        $(".redpacket_box,.layer_bg").hide();
+    });
+
+    $(function(){
+        $('.lop').click(function(event) {
+            $('.layer_bg').show();
+            $('#slideBox').css('opacity','1')
+            $('#slideBox').css('top','2rem')
+        });
+
+        //加入qq群
+        $('#addqq').click(function(event) {
+            $('.layer_bg').show();
+            $('#slideBox2').css('opacity','1')
+            $('#slideBox2').css('top','2rem')
+        });
+        $('.layer_bg').click(function(event) {
+            $('#slideBox').css('opacity','0');
+            $('#slideBox').css('top','-50rem');
+            $('#slideBox2').css('opacity','0');
+            $('#slideBox2').css('top','-50rem');
+            $(".layer_bg,.layer,#layer_redpacket").fadeOut('400');
+        });
+
+        $('.layer_bg').on('touchmove', function(event) {
+            event.preventDefault();
+        });
+
+        // 红包
+
+    })
+
+
+    function dailyAward(){
+        $.ajax({
+            url:"?action=ajax",
+            type:'post',
+            dataType:'json',
+            data:{
+                action:"qianghongbao"
+
+            },
+            success:function(res) {
+
+
+
+                if(res['code']==1){
+                    //$('.layer p').text(res.msg);
+                    //$('.layer,.layer_bg').show();
+
+
+                    //setTimeout( "location.reload()",2000 );
+
+                    $(".redpacket h2 em").text(res.msg);
+                    $('.redpacket_box,.layer_bg').show();
+                    $("#yue").html(res.money);
+
+                    // location.reload();
+                } else{
+
+                    $('.layer p').text(res['msg']);
+                    $('.layer,.layer_bg').show();
+
+                }
+
+            }
+        });
+    }
+
+    //     function dailyAward(){
+    //         $.ajax({
+    //             url:"/User/dailyAward.html",
+    //             type:'post',
+    //             dataType:'json',
+    //             success:function(res) {
+
+    //                 if(res['success']==true){
+
+    //                     $('.layer p').text('恭喜您获得2金红.包!');
+    //                     $('.layer,.layer_bg').show();
+    //                     setTimeout( "location.reload()",2000 );
+    //                     // location.reload();
+    //                 } else if(res['success']==false) {
+    //                     $('.layer p').text(res['msg']);
+    //                     $('.layer,.layer_bg').show();
+    //                 }
+
+    //             }
+    //         });
+    //     }
+</script>

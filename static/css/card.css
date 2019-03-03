@@ -1,0 +1,26 @@
+html,body{width: 100%;height: 100%;background:#f3f3f5;}
+.wrap{width: 100%;height: 100%;}
+.top_tit{width: 100%;background:#fff;padding:0.5rem 0.5rem;box-sizing: border-box;color:#666;font-size:1rem;overflow: hidden;}
+.top_tit img{height: 1.5rem;}
+.kjui{float: left;overflow: hidden;}
+.kjui span{float: left;}
+.kjui img{height: 1rem;margin-top: 0.2rem;margin-right: 0.2rem;}
+.kjui em{float: left;}
+.rio{float: right;cursor: pointer;}
+.bai_box{width: 100%;background:#fff;margin-top: 0.5rem;padding:0.5rem 5%;box-sizing: border-box;overflow: hidden;}
+.bai_box>div{float: left;width:30%;height: 2.5rem;line-height: 2.5rem;border:2px solid #34bbac;border-radius: 5px;color:#34bbac;font-size:0.95rem;text-align: center;margin-right: 3%;margin-bottom: 0.5rem;}
+.bai_box>div:nth-of-type(3n){margin-right: 0;}
+.bai_box .on{color:#fff;background:#34bbac;}
+.zu_da{width: 100%;margin-top: 0.5rem;background:#fff;}
+.xzu{border-bottom: 2px solid #f3f3f5;width: 100%;overflow: hidden;padding:0.8rem 1rem;box-sizing: border-box;}
+.left_poi{float: left;}
+.left_poi img{height: 1rem;}
+.left_poi2 img{height: 0.9rem;}
+.left_poi3 img{height: 0.88rem;}
+.right_poi{float: right;height: 1.2rem;width: 1.2rem;background:url("../../images/super_augur/w1.png"/*tpa=http://www.aisongche.cn/Public/Home/images/super_augur/w1.png*/) no-repeat center center;background-size:contain;cursor: pointer;}
+.que_btn{background:#fe9900;color:#fff;font-size:1.2rem;text-align: center;height: 2.5rem;line-height: 2.5rem;width: 90%;border-radius: 3px;margin:1rem auto;cursor: pointer;}
+.que_btn img{display: inline-block;vertical-align: middle;height: 1rem;margin-top: -0.2rem;}
+.right_poi.on{background:url("../../images/super_augur/w2.png"/*tpa=http://www.aisongche.cn/Public/Home/images/super_augur/w2.png*/) no-repeat center center;background-size:contain;}
+.sdg{width: 100%;height: 100%;background:rgba(0,0,0,0.7);position:fixed;left:0;top:0;z-index: 1;padding-top: 30%;box-sizing: border-box;display: none;}
+.sdg img{width: 85%;display: block;margin:0 auto;}
+.poiu{margin-right: 0.5rem;}

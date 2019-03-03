@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 适应移动端end -->
+    <title>莲云娱乐3，长久稳定平台，充值提现秒到-尾号订单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/index1.css" />
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/jquery.range.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/index.js"></script>
+
+    <style>
+        body{
+            width: 100%;
+            background-color: #fff;
+            /* height: auto; */
+
+        }
+        .music {
+            position: absolute;
+            /* right: 0!important; */
+            left: auto;
+            top: 10rem;
+            left: 0.2rem;
+        }
+        .game_box{
+
+            font-family: "Microsoft YaHei";
+            background-size: 100% 110%;
+        }
+        .topList{box-shadow:inset 0px 0px 8px #888888;padding: 8px 4px 0 4px;height: 1.8rem;line-height: 1.2rem;position: absolute;top:0;z-index: 1; width: 100%}
+        .topList ul li{float:left;color: #fffee1;font-size: .55rem;width: 16%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-align: center;font-weight: bold;padding-top: 1px}
+        .topList ul .btnStyle{background: linear-gradient(to bottom, #f3e4ab, #f3e4ab 10%,#c0a15c);border-radius: 5px;color: #614936;border:1px solid #9a7c48;}
+        .topList ul li:first-child{width: 24%;}
+        .topList ul li:nth-child(2),.topList ul li:nth-child(3){width: 12%;}
+        .topList ul li:nth-child(2) a,.topList ul li:nth-child(3) a{padding: 1px 7px;}
+        .topList ul li a{color: #fff}
+        .topList ul li:nth-child(5){margin: 0 .5%;}/*border-right: 1px solid #fff;border-left: 1px solid #fff,.topList ul li:nth-child(4)*/
+        .topList ul li .pay,.topList ul li .cash{background: linear-gradient(to bottom, #f3e4ab, #f3e4ab 10%,#c0a15c);border-radius: 5px;color: #614936;font-size:1rem;}
+
+        footer{
+            width:100%;
+            height:3rem;
+            position: fixed;
+            left:0;
+            bottom:0;
+            z-index: 50;
+        }
+        .footer_ul{
+            width:100%;
+            height:3rem;
+            border-top:1px solid #9a7c48;
+            background: linear-gradient(to bottom, #bd6018, #5f2205 20%, #c7774f);
+            background: -webkit-linear-gradient(to bottom, #674932, #674932 20%, #54382a);
+        }
+        .footer_ul li{
+            float: left;
+            width:20%;
+            height:100%;
+            list-style: none;
+            text-align: center;
+        }
+        .footer_ul li a{
+            display: block;
+        }
+        .footer{
+            display: block;
+            font-size: 0.6rem;
+            color: #d2c38e;
+        }
+        .footer_icon{
+            width:30%;
+            height:1.8rem;
+            margin:0 auto;
+            text-align: center;
+        }
+        .footer_icon>img{
+            height:70%;
+            margin-top: 22%;
+        }
+        .footer>p{
+            margin-top: 0.05rem;
+        }
+
+        .activeMenu {
+            background: linear-gradient(to bottom,#f7e9b1,#f7e9b1 20%,#c1a25d);
+            background: -webkit-linear-gradient(to bottom,#f7e9b1,#f7e9b1 20%,#c1a25d);
+        }
+        .cy {
+            color: #543d29;
+            text-shadow: 0px 0px 1px #fff;
+        }
+        .now_stake {
+            width: 90%;
+            text-align: center;
+            font-size: .75rem;
+            color: #fff;
+            letter-spacing: 1px;
+            background: url(__STATIC__/image/nowStakeBg.png) no-repeat center;
+            background-size: 100% 100%;
+            padding: 5px 0;
+            overflow: hidden;
+            margin: 0 auto;
+            text-shadow: 2px 2px 10px #4e3d11;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <!-- 信息，充值
+
+    新手 -->
+    <div id="info_recharge" style="background-color:#bc07f8">
+        <em class="flag_data"></em>
+        <span>余额 : &nbsp;</span>
+        <em id="my_money">0.00</em>
+        <span id="btn_recharge">充值</span>
+        <em id="arrow_right"></em>
+    </div>
+    <section class="sz4" style="position:fixed;top:15rem;right:1rem;display:none">
+        <a href="?action=draw"><img src="__STATIC__/image/luck.png" style="width:2.5rem"></a>
+    </section>
+    <div class="xinshou" style=""></div>
+    <!-- 获奖信息 -->
+    <div class="shangxia" style="margin-top:0.01rem;">
+        <div id="flag_man11"></div>
+        <div class="big_box" style="color:#000;">
+
+
+            <!-- <div class="zu_row">我是1</div> -->
+        </div>
+    </div>
+
+
+    <div class="lopi" style="display: -webkit-flex;
+    overflow: hidden;
+    margin-top: 0.01rem;
+    margin-left: 10%;">
+        <div id="flag_man"></div>
+        <div class="tonggao">
+
+            <div class="kzi">
+                <div class="zizi">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 游戏盒子 -->
+    <div class="game_box" style="">
+        <div class="game_main">
+            <!-- <div class="left_box">数量</div> -->
+            <div class="right_box">
+                <div class="right_top">
+                    <div class="right_top_left">
+                        <div class="jian"></div>
+                        <div class="num"><span  id='total_hand'>1</span></div>
+                        <div class="jia"></div>
+                    </div>
+                    <div class="flag_dialog" style=""><p>有机会获得<em id="getMoney">10</em>金</p></div>
+                </div>
+                <!-- 进度条 -->
+                <div class="demo">
+                    <input type="hidden" class="single-slider" value="1" />
+                    <!-- flag-redpack -->
+                    <div class="flag_redpack"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="daxiao_box1" style="padding-left:1%rem;margin-top:0rem;">
+            <div class="danyi_box on" data="0" id="choosedanyi" style="width:48%;">单一场（普通倍率）</div>
+            <div class="zuhe_box" data="1" id="choosezuhe" style="width:48%;">组合场（高倍率）</div>
+
+
+            <!--<div class="caihe" style="width:40%;margin-left:28%;margin-top:5px;" data="4">猜合</div>-->
+        </div>
+        <input type="hidden" id="xuanzhe" value="0" />
+        <div class="daxiao_box" style="padding-left:2rem;margin-top:0.8rem;" id="danyi">
+            <div class="da_box on" data="0" style="">猜大</div>
+            <div class="xiao_box" data="1" style="">猜小</div>
+            <div class="dan_box " data="2" style="">猜单</div>
+            <div class="shuang_box" data="3" style="">猜双</div>
+
+            <!--<div class="caihe" style="width:40%;margin-left:28%;margin-top:5px;" data="4">猜合</div>-->
+        </div>
+
+        <div class="daxiao_box" style="padding-left:2rem;margin-top:0.8rem;display:none" id="zuhe">
+            <div class="dadan_box on" data="4" style="">大单</div>
+            <div class="xiaodan_box" data="5" style="">小单</div>
+            <div class="dashuang_box " data="6" style="">大双</div>
+            <div class="xiaoshuang_box" data="7" style="">小双</div>
+
+            <!--<div class="caihe" style="width:40%;margin-left:28%;margin-top:5px;" data="4">猜合</div>-->
+        </div>
+
+
+        <!-- 确定按钮 -->
+        <div id="submit_box">
+            <div id="selection" style="display:none"><b>当前选择 : <span id="type">猜单</span>夺<span id="money">20</span>手</b></div>
+            <a href="javascript:void(0);" id="submit_btn" style="padding-top:0.3rem"></a>
+
+        </div>
+
+
+
+        <div class="sming" style="color:#000;margin-top:0.01rem;">备注：普通场赔率：1比1.9。复合场：大单1:3，小单1:3.8；大双1:3.8，小双1:3 </div>
+    </div>
+    <div class="rhyz"><span style="border:1px solid #FFB917;">如何验证</span><a href="{:url('index/index')}" style="border:1px solid #FFB917;">个人中心</a></div>
+    <!-- 10调游戏记录 -->
+
+
+    <div class="now_stake">最近10次夺.宝记录</div>
+
+    <div class="jilu">
+
+
+    </div>
+</div>
+<!-- 定位 -->
+<!-- <div class="ding_box"><a href="/User/index.html">返回</a></div> -->
+<!-- 新加确定是否真的下注弹框 -->
+<div class="que_sure que_sure1" style="background-color: #bc07f8;">
+    <div class="bou">
+        <div class="bou_left">数量(手)</div>
+        <div id="total" class="bou_right">1手</div>
+    </div>
+    <div class="bou">
+        <div id="guessType" class="bou_left">单一场</div>
+        <div id="guessCont" class="bou_right" >大</div>
+    </div>
+    <div class="bou">
+        <div class="bou_left">手续费</div>
+        <div id="fee" class="bou_right">1.00</div>
+    </div>
+
+    <div class="bou" style="display:none">
+        <div class="bou_left">通知费</div>
+        <div id="total_get11" class="bou_right">1.00</div>
+    </div>
+    <!--<div class="bou">
+        <div class="bou_left">当日可提次数</div>
+        <div id="cash_total" class="bou_right ">100次</div>
+    </div>
+    !-->
+    <div class="cad">
+        <div id="sure_btn" style="background-color: #bc07f8;">确定</div>
+        <div id="qu_btn">取消</div>
+    </div>
+</div>
+<!--     <div class="que_sure que_sure2">
+        <div class="bou">
+            <div class="bou_left">数量(手)</div>
+            <div class="bou_right total">1手</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">猜大小</div>
+            <div class="bou_right">大</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">手续费</div>
+            <div class="bou_right fee">1.00</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">预期收益</div>
+            <div class="bou_right total_get">10.00</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">当日可提次数</div>
+            <div class="bou_right cash_total">100次</div>
+        </div>
+         <div class="cad">
+            <div class="sure_btn" onclick="buyNumber(1)">确定</div>
+            <div class="qu_btn">取消</div>
+        </div>
+    </div> -->
+<!-- 猜双弹框 -->
+<!--     <div class="que_sure que_sure3">
+        <div class="bou">
+            <div class="bou_left">数量(手)</div>
+            <div class="bou_right total">1</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">猜单双</div>
+            <div class="bou_right">双</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">手续费</div>
+            <div class="bou_right fee">1.00</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">预期收益</div>
+            <div class="bou_right total_get">10.00</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">当日可提次数</div>
+            <div class="bou_right cash_total">100</div>
+        </div>
+         <div class="cad">
+            <div class="sure_btn" onclick="buyNumber(3)">确定</div>
+            <div class="qu_btn">取消</div>
+        </div>
+    </div> -->
+<!-- 猜单弹框 -->
+<!--     <div class="que_sure que_sure4">
+        <div class="bou">
+            <div class="bou_left">数量(手)</div>
+            <div class="bou_right total">1手</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">猜单双</div>
+            <div class="bou_right">单</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">手续费</div>
+            <div class="bou_right fee">1.00</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">预期收益</div>
+            <div class="bou_right total_get">10.00</div>
+        </div>
+        <div class="bou">
+            <div class="bou_left">当日可提次数</div>
+            <div class="bou_right cash_total">100次</div>
+        </div>
+         <div class="cad">
+            <div class="sure_btn" onclick="buyNumber(2)">确定</div>
+            <div class="qu_btn">取消</div>
+        </div>
+    </div> -->
+
+
+<!-- 夺.宝规则 -->
+<div class="duobao">
+    <div class="duobao_cont">
+        <p>1.每次微信提.现都会生成一个唯一的交.易单号，该单号仅由微信平台生成，完全公平，公正，公开。</p>
+        <p>2.超级夺.宝采集微信支付交.易单号的尾号数作为依据，尾数5~9为大， 0~4为小。</p>
+        <p>3.夺.宝开奖为大小或单双后将提.现1金，成功提.现后微信支付交.易单号立刻显示，揭晓开奖。</p>
+        <p>4.每手10金，每手押注收取1金手续费。每次超级夺.宝最小为1手，最大为10手。</p>
+        <p>5.因受微信规则限制，每位夺.宝玩家每天拥有100次提.现机会，建议广大玩家们尽量积累财富，大额提.现，少次提取。</p>
+    </div>
+    <div id="btn_teach" style="display:none"></div>
+</div>
+<!-- 如何验证盒子 -->
+<div class="rhyqz">
+    <div class="tit_top" style="background-color: #ffba15;">如何验证</div>
+    <img src="__STATIC__/image/rhzf.png"  alt="" />
+    <div class="queding">知道了</div>
+</div>
+<!-- 保存二维码付钱 -->
+<div class="main_main">
+    <p class="red_qian">充.值后的钱会入你的账户，可以体现</p>
+    <p class="red_qian">第一步：长按保存该二维码图片</p>
+    <img src="" alt="" />
+    <p class="red_qian">第二步：点击以下按钮，从【相册】选中刚才保存的【二维码】</p>
+    <div class="tsys">点击调起【扫一扫】</div>
+    <p class="zwd">支付完成后 耐心等待5秒</p>
+</div>
+<!-- 提示充.值 -->
+<div class="tscz">余额不足呦，请先充.值吧！</div>
+<!-- 公共弹框 -->
+<div class="ggtk"></div>
+
+<!-- 游戏结果 -->
+<!-- <div class="you_game"> -->
+<!-- 当结果是亏.损时，图片路径是images/lvcha.png;当结果是盈.利时，图片路径是images/lvgou.png; -->
+<!--         <img src="/Public/Home/images/super_augur/.png"  alt="" />
+        <p class="cgyf">夺.宝成功</p>
+        <p class="jiop">交.易单号</p>
+        <div class="jiaoyidh" id='wx_order_number'><em></em></div>
+        <div class="cds">
+            <span class="caisha" id='number'></span>
+            <span class="jishou" id='buy_total_hand'>手</span>
+        </div> -->
+<!-- 当结果是亏.损时，加类blue;当结果是盈.利时，加类red -->
+<!--         <div class="kuisyili " id='money_change'>
+            <em></em>金
+        </div>
+        <div class="sure_box">确定</div>
+    </div> -->
+
+
+<!-- 网络不好时调用 -->
+
+<div class="wlbh">
+    <img src="__STATIC__/image/zhuan10.gif"  alt="" style="width:4.8rem;height:5rem" />
+</div>
+<div class="layer_bg"></div>
+<input type="text" name="left_cash" id='left_cash' value="100" style="display: none">
+
+
+<!-- 客服二维码 -->
+<div id="service_layer"></div>
+
+<!-- 新手教程 -->
+<!-- <div id="tips_1" class="tips"></div>
+<div id="tips_2" class="tips"></div>
+<div id="tips_3" class="tips"></div>
+<div id="tips_4" class="tips">
+    <div id="tips_surebtn"></div>
+    <div id="tips_again_box"><a id="tips_againbtn" href="javascript:void(0);">再看一遍</a></div>
+</div> -->
+
+<!-- 开奖 -->
+<!-- 中奖 -->
+<div id="success_layer" class="result_layer mylayer">
+    <h1>获得<em class="awards"></em>金额</h1>
+    <h3>夺宝成功</h3>
+    <h4>夺宝订单</h4>
+    <p><span class="list_head"></span><em class="list_tail"></em></p>
+    <div class="result">
+        <div class="tail_box"></div>
+        <span class="result_guess"></span>
+        <span class="result_hand"></span>
+        <span class="result_awards"></span>
+    </div>
+</div>
+<div id="flag_pig" class="mylayer"></div>
+<div id="success_share" class="play_again mylayer"></div>
+
+<!-- 不中 -->
+<div id="fail_layer" class="result_layer mylayer">
+    <h1>差一点耶</h1>
+    <h3>夺宝失败</h3>
+    <h4>夺宝订单</h4>
+    <p><span class="list_head"></span><em class="list_tail"></em></p>
+    <div class="result">
+        <div class="tail_box"></div>
+        <span class="result_guess"></span>
+        <span class="result_hand"></span>
+        <span class="result_awards"></span>
+    </div>
+</div>
+<div id="flag_monkey" class="mylayer"></div>
+<div id="fail_again" class="play_again mylayer"></div>
+
+<!-- 分享 -->
+<!--     <div id="spread_layer"> -->
+<!--         <div id="jifen"><em></em>积分</div> -->
+<!--         <div id="spread_btn"></div> -->
+<!--     </div>
+    <div class="f_top"></div>-->
+
+
+</body>
+</html>
+<script>
+    var my_height = $("body")[0].clientHeight;
+    var my_width = $("body")[0].clientWidth;
+    var sdf = my_height/my_width;
+
+
+    if (sdf < 1.5) {
+        $("body").addClass('suo');
+    };
+</script>
+<script>
+    var user_id = "3486";
+    var show = "";
+    if(show == 1){
+        $('.layer_bg').fadeIn("400");
+    }
+    $(function(){
+
+        // 进度条
+
+        $('.single-slider').jRange({
+            from: 1,
+            to: 50,
+            step: 1,
+            scale: [1, 10, 20, 30, 40, 50],
+            format: '%s',
+            width: 15.667+'rem',
+            showLabels: true,
+            showScale: true
+        });
+        // 进度条结束
+
+
+        // 加减操作
+        var x = 1;
+        var step = parseInt($(".demo").width() / 50);//进度条的步长
+        var colorBar = 0;
+
+        // 加
+        $(document).on('click','.jia',function(){
+            x = $("#total_hand").text();
+
+            x++;
+            if (x > 50) { return false; };
+
+            colorBar = x*step;
+            if(x == 50){x=50;colorBar = $(".demo").width();}
+            $('.num span').text(x);
+            $("#money").text(x);
+
+
+            var number = Number($(".daxiao_box>.on").attr('data'));
+
+            // alert(number);
+            if(number == 4){
+                $('.yqsy').text(10*x*7);
+                $("#getMoney").text(10*x*7);
+            }else{
+                $('.yqsy').text(10*x);
+                $('.yqsy').text(10*x);
+                $("#getMoney").text(10*x);
+            }
+
+            $('.sxf').text(x);
+
+            // 触动进度条
+            $(".selected-bar").animate({width: colorBar}, 400);
+            $(".pointer").animate({left: colorBar-7}, 400);
+        })
+        // 减
+        $(document).on('click','.jian',function(){
+            x = $("#total_hand").text();
+
+            x--;
+            if (x < 1) { return false; };
+
+            colorBar = x*step;
+            if(x == 1){ x=1; colorBar = 0; }
+            $('.num span').text(x);
+            $("#money").text(x);
+
+            var number = Number($(".daxiao_box>.on").attr('data'));
+
+            // alert(number);
+            if(number == 4){
+                $('.yqsy').text(10*x*7);
+                $("#getMoney").text(10*x*7);
+            }else{
+                $('.yqsy').text(10*x);
+                $("#getMoney").text(10*x);
+            }
+
+            $('.sxf').text(x);
+
+            // 触动进度条
+            $(".selected-bar").animate({width: colorBar}, 400);
+            $(".pointer").animate({left: colorBar-7}, 400);
+
+        })
+        // 最小
+        // $(document).on('click','.min_box',function(){
+        //     x=1;
+        //     $('.num span').text(x);
+        //     $('.yqsy').text(10*x);
+        //     $('.sxf').text(x);
+        // })
+        // 最大
+        // $(document).on('click','.max_box',function(){
+        //     x=20;
+        //     $('.num span').text(x);
+        //     $('.yqsy').text(10*x);
+        //     $('.sxf').text(x);
+        // })
+        // X2
+        // $(document).on('click','.stwo',function(){
+        //    var my_text=parseInt($('.num span').text());
+        //    var rty=2*my_text;
+        //    if(rty>10){rty=10;}
+        //    x=rty;
+        //    $('.num span').text(x);
+        //    $('.yqsy').text(10*x);
+        //    $('.sxf').text(x);
+        // })
+        // /2
+        // $(document).on('click','.ctwo',function(){
+        //    var my_text=parseInt($('.num span').text());
+        //    var rty=parseInt(my_text/2);
+        //    if(rty<1){rty=1;}
+        //    x=rty;
+        //    $('.num span').text(x);
+        //    $('.yqsy').text(10*x);
+        //    $('.sxf').text(x);
+        // })
+
+        // 遮罩层
+        $('.layer_bg').click(function(event) {
+            $('.duobao').fadeOut("400");
+            $('.layer_bg').fadeOut("400");
+            $('.main_main').fadeOut("400");
+            $('.rhyqz').fadeOut("400");
+            $('.tscz').fadeOut("400");
+            $('.ggtk').fadeOut("400");
+            $('.que_sure').fadeOut("400");
+            $("#layer_recharge,#fail_layer,#service_layer,.result_layer,#spread_layer,.wlbh,.mylayer").fadeOut('400');
+        });
+        $('.layer_bg,.result_layer,#flag_pig,#flag_monkey,.play_again').on('touchmove', function(event) {
+            event.preventDefault();
+        });
+
+        // 规则
+        $('.lookRule').click(function(event) {
+            //$('.duobao,.layer_bg').fadeIn("400");
+            location.href = "?action=userindex";
+            //setTimeout("$('.layer_bg').click();",5000);
+        });
+        $("#btn_teach").on('click', function(event) {
+            $("#tips_1").fadeIn("400");
+        });
+        // 二维码下注
+        // $('.da_box').click(function(event) {
+        //         $('.tscz').fadeIn("400");
+        //         $('.layer_bg').fadeIn("400");
+        // });
+        // $('.xiao_box').click(function(event) {
+        //         $('.tscz').fadeIn("400");
+        //         $('.layer_bg').fadeIn("400");
+        // });
+        $('.sure_box').click(function(event) {
+            $('.layer_bg').fadeOut("400");
+        });
+        $('.rhyz').click(function(event) {
+            $('.rhyqz,.layer_bg').fadeIn("400");
+        });
+        $('.queding').click(function(event) {
+            $('.rhyqz,.layer_bg').fadeOut("400");
+        });
+
+    })
+    /* 押注 */
+    $('.danyi_box').click(function(){
+        $('.da_box').addClass("on").siblings('div').removeClass('on');
+        $('.dadan_box').siblings('div').removeClass('on');
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#zuhe").hide();
+        $("#danyi").show();
+
+        $("#xuanzhe").val(0);
+        $("#guessType").text("单一场");
+        $("#guessCont").text("大");
+
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(10*num);
+        $("#getMoney").text(10*num);
+    })
+
+    $('.zuhe_box').click(function(){
+        $('.dadan_box').addClass("on").siblings('div').removeClass('on');
+        $('.dan_box').siblings('div').removeClass('on');
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#danyi").hide();
+        $("#zuhe").show();
+
+        $("#xuanzhe").val(4);
+        $("#guessType").text("组合场");
+        $("#guessCont").text("大单");
+
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(20*num);
+        $("#getMoney").text(20*num);
+
+    })
+
+
+    $('#qu_btn').click(function(){
+        $('.que_sure,.layer_bg,.ggtk').fadeOut('400');
+    })
+    // 单
+    $('.dan_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("单一场");
+        $("#guessCont").text("单");
+        $("#xuanzhe").val(2);
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(10*num);
+        $("#getMoney").text(10*num);
+    })
+    // 双
+    $('.shuang_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("单一场");
+        $("#guessCont").text("双");
+        $("#xuanzhe").val(3);
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(10*num);
+        $("#getMoney").text(10*num);
+    })
+    // 大
+    $('.da_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("单一场");
+        $("#guessCont").text("大");
+
+        $("#xuanzhe").val(0);
+
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(10*num);
+        $("#getMoney").text(10*num);
+    })
+    $('.dadan_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("组合场");
+        $("#guessCont").text("大单");
+        $("#xuanzhe").val(4);
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(20*num);
+        $("#getMoney").text(20*num);
+    })
+
+    $('.xiaodan_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("组合场");
+        $("#guessCont").text("小单");
+        $("#xuanzhe").val(5);
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(29*num);
+        $("#getMoney").text(29*num);
+    })
+
+    $('.dashuang_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("组合场");
+        $("#guessCont").text("大双");
+        $("#xuanzhe").val(6);
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(29*num);
+        $("#getMoney").text(29*num);
+    })
+
+    $('.xiaoshuang_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("组合场");
+        $("#guessCont").text("小双");
+        $("#xuanzhe").val(7);
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(20*num);
+        $("#getMoney").text(20*num);
+    })
+
+    // 小
+    $('.xiao_box').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("单一场");
+        $("#guessCont").text("小");
+        $("#xuanzhe").val(1);
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(10*num);
+        $("#getMoney").text(10*num);
+    })
+
+    $('.caihe').click(function(){
+        $(this).addClass('on').siblings('div').removeClass('on');
+        $("#type").text($(this).text());
+        $("#guessType").text("猜合");
+        $("#guessCont").text("合");
+
+        var num = $('.num span').text();
+        num = parseInt(num);
+        $('.yqsy').text(10*num*7);
+        $("#getMoney").text(10*num*7);
+
+
+    })
+
+    // 确定按钮
+    // 1 兼容a:active的透明度
+    $("#submit_btn")[0].addEventListener('touchstart',function(){},false);
+    $("#submit_btn").on('click', function(event) {
+
+        //alert($("#xuanzhe").val());
+
+        if($("#xuanzhe").val() == -1){
+
+            $('.ggtk').text("请先选择下注");
+            $('.ggtk').fadeIn("400");
+            $('.layer_bg').fadeIn("400");
+            return  false;
+
+        }
+        $('#total').text($('#total_hand').text());
+        $("#fee").text($('#total_hand').text());
+        $("#total_get").text($("#getMoney").text());
+        $('.que_sure1,.layer_bg').fadeIn("400");
+    });
+
+    // 最终确定购买submit_btn
+    $("#sure_btn").on('click', function(event) {
+        var number = Number($("#xuanzhe").val());
+        //alert(number);exit;
+        buyNumber(number);
+    });
+
+    // 充值弹框
+    $("#submit_btn")[0].addEventListener('touchstart',function(){},false);
+    $("#btn_recharge,#arrow_right").on('click', function(event) {
+        //$(".layer_bg,#layer_recharge").fadeIn("400");
+        location.href="{:url('index/chongzhi')}";
+    });
+    // 额度选择
+    $("#layer_recharge").on('click', '.coin', function(event) {
+        $(this).addClass('on').siblings('.coin').removeClass('on');
+    });
+    // 充值方式
+    $("#sure_recharge").on('click', function(event) {
+        $("#payway_layer").fadeIn("400");
+        $("#payway_box").addClass('show');
+    });
+    // 充值
+    $("#payway").on('click',"div", function(event) {
+        var type = $(this).attr('id');
+        var amount = $(".coin.on").text();
+        var url = "/Index/rechargeIn.html?amount="+amount+'&type=' + type;
+        location.href=url;
+    });
+    // 取消
+    $("#recharge_cancle").on('click', function(event) {
+        $("#payway_layer").fadeOut("400");
+        $("#payway_box").removeClass('show');
+        $("#layer_recharge,.layer_bg").fadeOut('400');
+    });
+
+    // 购买教程
+    $("#tips_1").on('click', function(event) {
+        $("#tips_2").show();
+    });
+    $("#tips_2").on('click', function(event) {
+        $("#tips_3").show();
+    });
+    $("#tips_3").on('click', function(event) {
+        $("#tips_4").show();
+    });
+    // 秒懂，撸一把
+    $("#tips_surebtn").on('click', function(event) {
+        $(".tips,.duobao,.layer_bg").fadeOut('400');
+    });
+    // 再看一遍
+    $("#tips_againbtn").on('click', function(event) {
+        $(".tips").hide();
+        $("#tips_1").show();
+    });
+
+    // 中奖
+    $("#fail_again").on('click', function(event) {
+        $(".layer_bg,.result_layer,.mylayer").fadeOut('400');
+    });
+    // 中奖分享
+    $("#success_share").on('click', function(event) {
+        $(".mylayer,.layer_bg").hide();
+        // $("#spread_layer").show();
+    });
+    var canduobao = false;
+    function buyNumber(number){
+        $('.que_sure,.layer_bg').fadeOut('400');
+
+        //alert(number);exit;
+        if(number!=0 && number!=1 && number!=2 && number!=3&& number!=4&& number!=5&& number!=6&& number!=7){
+            return false;
+        }
+        if(canduobao){
+
+            return false;
+
+        }
+        canduobao = true;
+
+        $.ajax({
+
+            url:"?action=ajax_weihao",
+            type:'post',
+            dataType:'json',
+
+            data:{
+                action:"buyNumber",
+                total_hand: parseInt( $('#total_hand').text() ),
+                number: number
+            },
+
+            beforeSend: function(){
+                $('.wlbh').fadeIn("400");
+            },
+
+            success:function(res) {
+
+                canduobao = false;
+                $('.wlbh').fadeOut("400");
+                if( res['success']==true ){     //订单成功
+                    $('#my_money,#my_money2,#balance').text(res['my_money']);
+
+
+                    // var html = res['wx_order_number']+"<em>"+res['tail']+"</em>";
+                    // $('#wx_order_number').html(html);
+
+                    // var shou = res['total_hand']+"手";
+                    // $('#buy_total_hand').text(shou);
+
+                    // if(res['number']==0){
+                    //     $('.result_guess').text('猜小');
+                    // } else if(res['number']==1){
+                    //     $('.result_guess').text('猜大');
+                    // } else if(res['number']==2){
+                    //     $('.result_guess').text('猜单');
+                    // } else if(res['number']==3){
+                    //     $('.result_guess').text('猜双');
+                    // }
+
+                    // 开奖结果构造
+                    // 中奖金额
+                    $(".awards,#jifen>em").text(res['money']);
+                    // 开奖订单
+                    $(".list_head").text(res['wx_order_number']);
+                    $(".list_tail,.tail_box").text(res['tail']);
+                    // 几手
+                    $(".result_hand").text(res['total_hand']+"手");
+                    // 猜大小单双
+
+                    if(res['number']==0){
+                        $('.result_guess').text('猜大');
+                        var num_str = '猜大 ';
+                    } else if(res['number']==1){
+                        $('.result_guess').text('猜小');
+                        var num_str = '猜小 ';
+                    } else if(res['number']==2){
+                        $('.result_guess').text('猜单');
+                        var num_str = '猜单 ';
+                    } else if(res['number']==3){
+                        $('.result_guess').text('猜双');
+                        var num_str = '猜双 ';
+                    }else if(res['number']==4){
+                        $('.result_guess').text('猜大单');
+                        var num_str = '猜大单 ';
+                    }else if(res['number']==5){
+                        $('.result_guess').text('猜小单');
+                        var num_str = '猜小单 ';
+                    }else if(res['number']==6){
+                        $('.result_guess').text('猜大双');
+                        var num_str = '猜大双 ';
+                    }else if(res['number']==7){
+                        $('.result_guess').text('猜小双');
+                        var num_str = '猜小双 ';
+                    }
+
+                    // 赢奖
+                    $(".result_awards").text(res['win_money']);
+
+                    if(res['left_cash_time']>=0){
+                        $('#cash_total').text(res['left_cash_time']);
+                    }
+
+                    if(res['is_win']==1){   //已中奖
+
+                        $("#success_layer,.layer_bg,#success_share,#flag_pig").fadeIn("400");
+
+                    } else if(res['is_win']==0) {  //未中奖
+
+                        $("#fail_layer,.layer_bg,#fail_again,#flag_monkey").fadeIn("400");
+
+                    }
+
+                    // 显示结果
+                    $('.layer_bg').fadeIn("400");
+
+                    // 中奖记录append
+                    var append_str = '';
+                    var str1 =  '<div class="zu_ji" style="color:#000"><div class="ji_left"><span class="cdx">';
+
+                    var str2 = '</span><span class="jis">';
+                    var hand_str = res['total_hand'];
+
+                    var str3 = '手</span><span class="ylks red"> 获.得 ';
+                    var str4 = '金</span>';
+
+                    var str5 = '手</span><span class="ylks blue" style="color:grey;"> 亏.损 ';
+
+                    var buy = res['buy_money'];
+
+                    if(res['status']==3){
+                        append_str = append_str+str1+num_str+str2+hand_str+str3+buy+str4;
+                    }else if(res['status']==2){
+                        append_str = append_str+str1+num_str+str2+hand_str+str5+buy+str4;
+                    }
+
+                    //                     var str6 = '</div><div class="ji_right"><span>  尾数  </span><span class="nun_z redd"> ';
+                    //                     var tail = res['tail'];
+
+                    //                     var str7 = ' </span><span class="nun_z redd">';
+
+                    //                     var tail2 = res['tail2'];
+
+                    //                     var str8 = ' </span><span class="nun_z redd">';
+
+                    //                     var tail3 = res['tail3'];
+
+                    //                     var str9 = '</span></div></div>';
+
+                    var str6 = '</div><div class="ji_right"><span>  尾数  </span><span class="nun_z redd" style="color:#333;"> ';
+                    var tail = res['tail'];
+
+                    var str7 = '</span><span class="nun_z redd">';
+
+                    var tail2 = res['tail2'];
+
+                    var str8 = '</span><span class="nun_z redd">';
+
+                    var tail3 = res['tail3'];
+
+                    var str9 = ' </span></div></div>';
+
+                    //append_str = append_str+str6+tail+str7+tail2+str8++tail3+str9;
+
+                    append_str = append_str+str6+tail+str9;
+                    $('.jilu').prepend(append_str);
+                    if ($('.jilu>.zu_ji').length > 10) {
+                        $('.jilu>.zu_ji:last-child').remove();
+                    };
+
+                } else if( res['success']==false ){    //订单失败
+                    $('.ggtk').text(res['msg']);
+                    $('.ggtk').fadeIn("400");
+                    $('.layer_bg').fadeIn("400");
+
+                    if(res['code'] == 1){
+
+                        setTimeout(function(){
+                            window.location.href="?action=chongzhi";
+                        },2000);
+
+                    }
+                }
+            }
+        });
+    }
+
+    /* 中奖弹幕 */
+    /* 中奖弹幕 */
+    get_barrage();
+    setInterval( "get_barrage()",10000 );
+    function get_barrage(){
+        $.ajax({
+            url:"?action=ajax_weihao",
+            type:'post',
+            data:{
+                action:"zhongjiaorenyuan",
+            },
+
+            dataType:'json',
+            success:function(res) {
+                appendBarrage(res);
+                var my_length=$('.zu_row').length;
+                for(i=0;i<my_length;i++){
+                    var my_wer=(3*i)+'s'
+                    $('.zu_row').eq(i).attr("style",'-webkit-animation:shangxia  2s  '+my_wer+' linear');
+                    $('.zu_row').eq(i).attr("style",'animation:shangxia  2s  '+my_wer+' linear')
+                }
+            }
+        });
+
+    }
+
+    function appendBarrage(res){
+        $('.big_box').html('');
+        var barrage_str = '';
+        $.each(res,function(index,data){
+            var barrage_str ="<div class='zu_row' >哇塞：恭喜"+data['letter_id']+" 获得 "+data['win_money']+"</div>";
+
+            $('.big_box').append(barrage_str);
+        });
+    }
+
+</script>
+
+
+

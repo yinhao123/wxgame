@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>资金明细</title>
+    <script src="__STATIC__/js/jquery-1.7.2.min.js"></script>
+
+
+    <link rel="stylesheet" href="__STATIC__/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/global.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/jymx.css">
+
+    <link rel="stylesheet" href="__STATIC__/css/index.css">
+    <script type="text/javascript" src="__STATIC__/js/jymx.js"></script>
+
+    <style>
+        body{
+
+        }
+        em, i {
+            font-style: normal;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body style="padding-top:0px;">
+<div class="wrap">
+    <div class="top_tit">
+        <div class="cxd " style="width:50%">尾号记录</div>
+        <div style="display:none" >转盘记录</div>
+        <div style="width:50%">充值/兑换记录</div>
+    </div>
+
+
+    <div class="game_box game_box1" >
+
+
+
+    </div>
+
+    <div class="game_box game_box2" >
+
+
+
+
+    </div>
+
+    <div class="game_box game_box3" >
+
+    </div>
+
+</div>
+<div class="back_box"><a href="{:url('index/index')}">返回</a></div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    $(function(){
+        var my_length=$('.zhongj').length;
+        for(i=0;i<my_length;i++){
+            var mymy= $('.zhongj').eq(i).text();
+
+            if(mymy==="中奖"){
+                $('.zhongj').eq(i).removeClass('huang')
+                $('.zhongj').eq(i).siblings('.hongse').css('color','#ec3702')
+            }else{
+                $('.zhongj').eq(i).addClass('huang');
+                $('.zhongj').eq(i).siblings('.hongse').css('color','#07af2a');
+
+            }
+
+        }
+
+
+
+        $('.top_tit>div').click(function(event) {
+            $(this).addClass('cxd').siblings().removeClass('cxd');
+            var my_mpoi=$(this).index();
+            $('.game_box').eq(my_mpoi).show().siblings('.game_box').hide();
+        });
+    })
+</script>
