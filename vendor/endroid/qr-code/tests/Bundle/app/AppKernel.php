@@ -19,8 +19,8 @@ class AppKernel extends Kernel
     {
         $bundles = [
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Endroid\QrCode\Bundle\EndroidQrCodeBundle(),
+            new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new Endroid\QrCode\Bundle\QrCodeBundle\EndroidQrCodeBundle(),
         ];
 
         return $bundles;

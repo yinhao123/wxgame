@@ -142,7 +142,7 @@
     <div id="info_recharge" style="background-color:#bc07f8">
         <em class="flag_data"></em>
         <span>余额 : &nbsp;</span>
-        <em id="my_money">0.00</em>
+        <em id="my_money">{$user['yue']}</em>
         <span id="btn_recharge">充值</span>
         <em id="arrow_right"></em>
     </div>
@@ -906,7 +906,8 @@
 
         $.ajax({
 
-            url:"?action=ajax_weihao",
+           // url:"?action=ajax_weihao",
+            url:'http://www.game.com/index.php/api/index/buyNumber',
             type:'post',
             dataType:'json',
 
@@ -928,21 +929,6 @@
                     $('#my_money,#my_money2,#balance').text(res['my_money']);
 
 
-                    // var html = res['wx_order_number']+"<em>"+res['tail']+"</em>";
-                    // $('#wx_order_number').html(html);
-
-                    // var shou = res['total_hand']+"手";
-                    // $('#buy_total_hand').text(shou);
-
-                    // if(res['number']==0){
-                    //     $('.result_guess').text('猜小');
-                    // } else if(res['number']==1){
-                    //     $('.result_guess').text('猜大');
-                    // } else if(res['number']==2){
-                    //     $('.result_guess').text('猜单');
-                    // } else if(res['number']==3){
-                    //     $('.result_guess').text('猜双');
-                    // }
 
                     // 开奖结果构造
                     // 中奖金额
@@ -1062,7 +1048,7 @@
                     if(res['code'] == 1){
 
                         setTimeout(function(){
-                            window.location.href="?action=chongzhi";
+                            window.location.href="";
                         },2000);
 
                     }

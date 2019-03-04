@@ -15,6 +15,7 @@
 namespace app\index\controller;
 
 use think\Controller;
+use think\Db;
 use think\facade\Request;
 
 /**
@@ -35,6 +36,8 @@ class Index extends Controller
      */
     public function index()
     {
+        $user = Db::name('GameUser')->where('id','=',1)->find();
+        $this->assign('user',$user);
      return   $this->fetch();
     }
 
@@ -44,7 +47,8 @@ class Index extends Controller
      */
     public function fenxiang()
     {
-
+        $user = Db::name('GameUser')->where('id','=',1)->find();
+        $this->assign('user',$user);
         return $this->fetch();
     }
 
@@ -75,6 +79,9 @@ class Index extends Controller
     }
     public function weihaodingdan()
     {
+
+        $user = Db::name('GameUser')->where('id','=',1)->find();
+        $this->assign('user',$user);
         return $this->fetch();
     }
     public function chenxizhifu()

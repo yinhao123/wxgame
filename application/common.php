@@ -12,6 +12,7 @@
 // | github开源项目：https://github.com/zoujingli/ThinkAdmin
 // +----------------------------------------------------------------------
 
+use Endroid\QrCode\QrCode;
 use service\DataService;
 use service\NodeService;
 use think\Db;
@@ -108,3 +109,28 @@ function local_image($url)
 {
     return \service\FileService::download($url)['url'];
 }
+
+/**
+ * 百度压缩短网址
+ * @param string $url 要压缩的短网址
+ * @return string
+ */
+function dwz($url)
+{
+    $api = 'http://api.t.sina.com.cn/short_url/shorten.json'; // json
+    $source = '1498247825';
+    $url_long = $url;
+    $request_url = sprintf($api.'?source=%s&url_long=%s', $source, $url_long);
+    $data = file_get_contents($request_url);
+    return $data;
+}
+
+/**
+ * 二维码生成
+ */
+function qrcode()
+{
+
+}
+
+

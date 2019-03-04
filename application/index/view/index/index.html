@@ -67,7 +67,7 @@
     <div class="top_tit">
         <a href="javascript:void(0);" id="freshgift" onclick="dailyAward()"></a>
         <!-- <div class="new_tu"></div> -->
-        <p class="idid">微光(ID:2541)</p>
+        <p class="idid">{$user['name']}(ID:{$user['id']})</p>
         <div class="cz_box">
             <div class="right_box">
 
@@ -79,12 +79,12 @@
 
             <div class="moip">
                 <p>游戏余额</p>
-                <p id="yue">0.00</p>
+                <p id="yue">{$user['yue']}</p>
             </div>
 
             <div>
                 <p>推.广积.分</p>
-                <p>0.00</p>
+                <p>{$user['yongjin']}</p>
             </div>
 
         </div>

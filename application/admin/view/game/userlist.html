@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="__STATIC__/res/layui/css/layui.css" media="all">
+</head>
+<body>
+
+
+<table  id="demo" lay-filter="test">
+
+</table>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script src="__STATIC__/res/layui/layui.all.js"></script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,height: 800
+            ,url: 'admin/game/userjson' //数据接口
+
+
+            ,loading:true
+            ,title:"用户列表"
+            ,page: true //开启分页
+            ,cols: [[ //表头
+
+                {field: 'id', title: 'ID', width:80, sort: true, }
+                ,{field: 'avatar', title: '玩家头像', width:100}
+                ,{field: 'name', title: '玩家昵称', width:100}
+                ,{field: 'openid', title: 'openid', width:100}
+                ,{field: 'status', title: '账号状态',width:100,edit:'text'}
+                ,{field: 'yaoqing', title: '邀请人数',width:100,edit: 'text'}
+                ,{field: 'yue', title: '账户余额',width:100,edit: 'text'}
+                ,{field: 'yongjin', title: '佣金',width:100,edit: 'text'}
+                ,{field: 'createat', title: '创建时间',width:100}
+                ,{field: 'loginatu', title: '最后登录'}
+                ,{field: 'tuiguangjifen', title: '推广积分',edit: 'text'}
+                ,{field: 'jiangli', title: '奖励头衔',edit: 'text'}
+                ,{field: 'yaoqingren', title: '邀请人',edit: 'text'}
+
+            ]]
+        });
+        //监听头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id)
+                ,data = checkStatus.data; //获取选中的数据
+            switch(obj.event){
+                case 'add':
+                    layer.msg('添加');
+                    break;
+                case 'update':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else if(data.length > 1){
+                        layer.msg('只能同时编辑一个');
+                    } else {
+                        layer.alert('编辑 [id]：'+ checkStatus.data[0].id);
+                    }
+                    break;
+                case 'delete':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else {
+                       $.post('course/index/delCourse',{'id': checkStatus.data[0].id},function (data,status) {
+                            layer.msg('ok')
+                       })
+                    }
+                    break;
+            };
+        });
+        //监听单元格编辑
+        table.on('edit(test)', function(obj){
+            var value = obj.value //得到修改后的值
+                ,data = obj.data //得到所在行所有键值
+                ,field = obj.field; //得到字段
+            // 将该信息返回到管理端
+            $.post('course/index/editCourse',{'id':data.id,'field':field,'value':value},function (data,status) {
+                layer.msg(data);
+            })
+        //    layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+        });
+        //监听行工具事件
+        table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                ,layEvent = obj.event; //获得 lay-event 对应的值
+            if(layEvent === 'detail'){
+                layer.msg('查看操作');
+            } else if(layEvent === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                });
+            } else if(layEvent === 'edit'){
+                layer.msg('编辑操作');
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
